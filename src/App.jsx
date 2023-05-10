@@ -1,24 +1,27 @@
 
 import './App.css'
 import "./components/header/header.component"
-import Header from './components/header/header.component'
-import Hero from "./components/hero/hero.component"
-import About from "./components/about/about.component"
-import Portfolio from './components/portfolio/portfolio.component'
-import Footer from "./components/footer/footer.component"
-
+import Home from "./Pages/home/home"
+import About from "./Pages/about/about"
+import Portfolio from './Pages/portfolio/portfolio'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Notfound from './Pages/error/notfound404'
 
 
 function App() {
 
   return (
-    <>
-      <Header />
-      <Hero />
-      <About />
-      <Portfolio />
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/portfolio' element={<Portfolio />} />
+        <Route path='*' element={<Notfound />} />
+
+
+      </Routes>
+    </Router>
+
 
   )
 }

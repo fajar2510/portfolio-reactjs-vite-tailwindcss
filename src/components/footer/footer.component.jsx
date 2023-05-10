@@ -3,7 +3,7 @@ import SosmedMe from "../social-media/social-media.component"
 
 const Footer = () => {
     return (
-        <footer className="bg-dark pt-24 pb-12">
+        <footer className="bg-dark dark:bg-slate-800 pt-24 pb-12">
             <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-2 ">
                     <div className="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3">
@@ -23,10 +23,10 @@ const Footer = () => {
                                 <a href="#home" className="inline-block text-base hover:text-primary mb-2">Beranda</a>
                             </li>
                             <li>
-                                <a href="#portofolio" className="inline-block text-base hover:text-primary mb-2">Portfolio</a>
+                                <a href="/portfolio" className="inline-block text-base hover:text-primary mb-2">Portfolio</a>
                             </li>
                             <li>
-                                <a href="#about" className="inline-block text-base hover:text-primary mb-2">Kontak</a>
+                                <a href="/about" className="inline-block text-base hover:text-primary mb-2">Kontak</a>
                             </li>
 
 

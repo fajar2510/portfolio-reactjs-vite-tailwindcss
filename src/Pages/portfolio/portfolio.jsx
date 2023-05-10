@@ -1,4 +1,7 @@
 import { useState } from "react"
+import Header from "../../components/header/header.component";
+import Footer from "../../components/footer/footer.component";
+
 
 const Portfolio = () => {
     const [projects] = useState([
@@ -35,31 +38,35 @@ const Portfolio = () => {
     ])
 
     return (
-        <section id="portofolio" className="pt-36 pb-16 bg-slate-100 dark:bg-slate-800">
-            <div className="container">
-                <div className="w-full px-4">
-                    <div className="max-w-xl  mx-auto text-center mb-16">
-                        <h4 className="font-semibold text-lg text-primary mb-2">Portofolio</h4>
-                        <h2 className="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Project terbaru</h2>
-                        <p className="font-medium text-md text-secondary md:text-lg">Berikut ini adalah beberapa project terbaru yang telah saya buat sebelumnya</p>
+        <>
+            <Header />
+            <section id="portofolio" className="pt-36 pb-16 bg-slate-100 dark:bg-dark">
+                <div className="container">
+                    <div className="w-full px-4">
+                        <div className="max-w-xl  mx-auto text-center mb-16">
+                            <h4 className="font-semibold text-lg text-primary mb-2">Portofolio</h4>
+                            <h2 className="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Project terbaru</h2>
+                            <p className="font-medium text-md text-secondary md:text-lg">Berikut ini adalah beberapa project terbaru yang telah saya buat sebelumnya</p>
+                        </div>
+                    </div>
+
+                    <div className="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
+                        {projects.map((project) => (
+                            <div key={project.id} className="mb-12 p-4 md:w-1/2 group">
+                                <div className="rounded-md shadow-md overflow-hidden group-hover:scale-[96%] group-hover:shadow-primary transition duration-500 ease-in-out">
+                                    <img src={project.imgUrl} className="group-hover:scale-110  transition duration-500 ease-in-out " alt="portofolio 1" width="w-full" />
+                                </div>
+                                <h3 className="font-semibold text-xl text-dark dark:text-white mt-5 mb-3">{project.title}</h3>
+                                <p className="font-medium text-base text-secondary text-justify">{project.description}</p>
+                            </div>
+                        ))}
+
+
                     </div>
                 </div>
-
-                <div className="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
-                    {projects.map((project) => (
-                        <div key={project.id} className="mb-12 p-4 md:w-1/2 group">
-                            <div className="rounded-md shadow-md overflow-hidden group-hover:scale-[96%] group-hover:shadow-primary transition duration-500 ease-in-out">
-                                <img src={project.imgUrl} className="group-hover:scale-110  transition duration-500 ease-in-out " alt="portofolio 1" width="w-full" />
-                            </div>
-                            <h3 className="font-semibold text-xl text-dark dark:text-white mt-5 mb-3">{project.title}</h3>
-                            <p className="font-medium text-base text-secondary text-justify">{project.description}</p>
-                        </div>
-                    ))}
-
-
-                </div>
-            </div>
-        </section>
+            </section>
+            <Footer />
+        </>
     )
 }
 
