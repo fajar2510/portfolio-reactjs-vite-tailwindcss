@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio ReactJs - TailwindCss</title>
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- back to top start -->
+    <a
+      id="to-top"
+      href="#home"
+      class="hover:animate-pulse hidden items-center justify-center h-12 w-12 bg-primary fixed z-[999] bottom-4 right-5 p-2 rounded-full opacity-50 hover:opacity-100 hover:animate-bounce transition duration-500 ease-in-out"
+    >
+      <span class="block w-5 h-5 border-t-2 border-l-2 rotate-45 mt-2"></span>
+    </a>
+    <!-- back to start end -->
+
+    <!-- script -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
